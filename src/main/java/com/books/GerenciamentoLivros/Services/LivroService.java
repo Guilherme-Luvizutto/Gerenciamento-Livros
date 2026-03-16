@@ -11,22 +11,22 @@ import java.util.List;
 public class LivroService {
 
     @Autowired
-    private LivroRepository repository;
+    private LivroRepository livroRepository;
 
     public LivroModel createLivro(LivroModel livroModel) {
-        return repository.save(livroModel);
+        return livroRepository.save(livroModel);
     }
 
     public List<LivroModel> findAll() {
-        return repository.findAll();
+        return livroRepository.findAll();
     }
 
     public LivroModel getById(Long id) {
-        return repository.findById(id).get();
+        return livroRepository.findById(id).get();
     }
 
-    public void delete(LivroModel livroModel) {
-        repository.delete(livroModel);
+    public void deleteById(Long id) {
+        livroRepository.deleteById(id);
     }
 
 }
